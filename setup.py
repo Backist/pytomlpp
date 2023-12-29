@@ -24,14 +24,18 @@ setup(
     ext_modules=[
         Extension(
             'pytomlpp._impl',
-            ['src/pytomlpp.cpp', 'src/type_casters.cpp', 'src/encoding_decoding.cpp'],
+            [
+                'src/pytomlpp.cpp',
+                'src/type_casters.cpp',
+                'src/encoding_decoding.cpp',
+            ],
             include_dirs=[
-                dir_path + '/include',
-                dir_path + '/third_party',
+                f'{dir_path}/include',
+                f'{dir_path}/third_party',
                 PyBind11Include(),
             ],
             extra_compile_args=extra_compile_args,
             language='c++',
-        ),
-    ],
+        )
+    ]
 )
